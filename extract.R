@@ -1,0 +1,10 @@
+library(rtweet)
+library(dplyr)
+library(data.table)
+tweet_df <- search_tweets("#ukraine", n = 500, 
+                          include_rts = FALSE)
+#write.csv(tweet_df,"/home/hanin/Desktop/project/tweet.csv", row.names = FALSE)
+#write.table(tweet_df,file="tweet.csv",sep=",")
+#colnames(tweet_df)
+#setDT(tweet_df)
+fwrite(tweet_df, file ="myDT.csv")
